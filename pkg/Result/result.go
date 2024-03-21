@@ -14,9 +14,9 @@ type some[T any] struct {
 }
 
 // This creates a useful result to be used
-func Value[T any](v *T) Type[T] {
+func Value[T any](v T) Type[T] {
 	return &some[T]{
-		value: v,
+		value: &v,
 	}
 }
 
